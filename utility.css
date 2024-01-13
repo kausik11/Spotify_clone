@@ -28,3 +28,33 @@
 .p1{
     padding: 20px;
 }
+/* Define styles for the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  /* Handle on active */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #777;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+  }
+  
+  /* Corner */
+  ::-webkit-scrollbar-corner {
+    background: #333;
+  }
