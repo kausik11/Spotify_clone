@@ -1,7 +1,7 @@
 
 
 async function getsong(){
-    let a = await fetch("http://127.0.0.1:5500/songs/");
+    let a = await fetch("http://127.0.0.1:5500/Songs/");
     let res  = await a.text();
     let div = document.createElement("div");
     div.innerHTML = res;
