@@ -1,4 +1,5 @@
 let currentSong = new Audio();
+let songs;
 function secoundsToMinutesSeconds(seconds){
     if(isNaN(seconds) || seconds < 0){
         return "invalid input"
@@ -35,7 +36,7 @@ async function main(){
 async function call(){
 
     
-    let songs = await main();
+     songs = await main();
     console.log(songs);
     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0];
     console.log(songUl);
@@ -98,6 +99,22 @@ async function call(){
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = percent + '%';
         currentSong.currentTime = ((currentSong.duration)*percent)/100;
+    })
+    //add a eventlistner for prev and next
+    prvoius.addEventListener("click",()=>{
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        console.log(index);
+        if((index-1)>= 0){
+            playMusic(songs[index-1])
+        }
+    })
+    next.addEventListener("click",()=>{
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        console.log(index);
+        if((index+1)>= length){
+            playMusic(songs[index+1])
+        }
+        
     })
 
 };
